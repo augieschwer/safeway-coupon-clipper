@@ -9,3 +9,6 @@ jobs:
       env:
         SAFEWAY_ACCOUNT_USERNAME: ${{ secrets.SAFEWAY_ACCOUNT_USERNAME }}
         SAFEWAY_ACCOUNT_PASSWORD: ${{ secrets.SAFEWAY_ACCOUNT_PASSWORD }}
+    steps:
+      - name: Clip Coupons
+        run: echo "Clipping coupons!"
