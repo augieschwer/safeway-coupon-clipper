@@ -1,0 +1,11 @@
+name: clipper
+on: workflow_dispatch
+jobs:
+  clipper:
+    name: clipper
+    runs-on: ubuntu-latest
+    container: 
+      image: ghcr.io/smkent/safeway-coupons:latest
+      env:
+        SAFEWAY_ACCOUNT_USERNAME: ${{ secrets.SAFEWAY_ACCOUNT_USERNAME }}
+        SAFEWAY_ACCOUNT_PASSWORD: ${{ secrets.SAFEWAY_ACCOUNT_PASSWORD }}
