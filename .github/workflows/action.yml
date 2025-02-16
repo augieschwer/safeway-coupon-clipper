@@ -8,4 +8,4 @@ jobs:
     - name: Install safeway-coupons
       run: pip install safeway-coupons
     - name: Clip Coupons
-      run: safeway-coupons --help
+      run: safeway-coupons --dry-run --no-email
