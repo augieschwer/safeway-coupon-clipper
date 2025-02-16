@@ -8,4 +8,7 @@ jobs:
     - name: Install safeway-coupons
       run: pip install safeway-coupons
     - name: Clip Coupons
+      env:
+        SAFEWAY_ACCOUNT_USERNAME: ${{ secrets.SAFEWAY_ACCOUNT_USERNAME }}
+        SAFEWAY_ACCOUNT_PASSWORD: ${{ secrets.SAFEWAY_ACCOUNT_PASSWORD }}
       run: safeway-coupons --dry-run --no-email
