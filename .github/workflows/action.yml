@@ -4,12 +4,8 @@ jobs:
   clipper:
     name: clipper
     runs-on: ubuntu-latest
-    container: 
-      image: ghcr.io/smkent/safeway-coupons:latest
-      env:
-        SAFEWAY_ACCOUNT_USERNAME: ${{ secrets.SAFEWAY_ACCOUNT_USERNAME }}
-        SAFEWAY_ACCOUNT_PASSWORD: ${{ secrets.SAFEWAY_ACCOUNT_PASSWORD }}
-        CRON_SCHEDULE: "* * * * *"
     steps:
-      - name: Clip Coupons
-        run: echo "Clipping coupons!"
+    - name: Install safeway-coupons
+      run: pip install safeway-coupons
+    - name: Clip Coupons
+      run: safeway-coupons --help
